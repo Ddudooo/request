@@ -1,0 +1,17 @@
+name: 'REQUEST DATA'
+description: 'Request any data'
+author: 'ddudooo'
+inputs: 
+  Method:
+    description: 'METHOD'
+    default: 'GET'
+  Content-type:
+    description: 'Content-type'
+    default: 'application/json'
+  data:
+    description: 'Data'
+  URL:
+    description: 'URL string'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
