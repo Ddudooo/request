@@ -1,6 +1,6 @@
 import core from "@actions/core";
 import github from "@actions/github";
-import request from "request";
+import request from "request-promise-native";
 
 async function run() {
     try {
@@ -21,11 +21,11 @@ async function run() {
             headers: HEADERS,
             body: data
         };
-        const callback = (err, res, body) => {
-            if (err) throw err;
-            console.log(`RESPONSE ${body}`);
-        };
-        request(OPTIONS, callback);
+        request(OPTIONS)
+            .then(res => console.log(`RESPONSE ${res.body}`))
+            .catch(err => {
+                throw err;
+            });
     } catch (error) {
         core.setFailed(error.message);
     }
