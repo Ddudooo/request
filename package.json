@@ -1,5 +1,5 @@
 {
-  "name": "request github action",
+  "name": "requestGithubAction",
   "version": "0.0.0",
   "description": "Request github action with nodejs",
   "main": "lib/main.js",
